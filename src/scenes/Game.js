@@ -14,13 +14,23 @@ export default class Game extends Phaser.Scene
 
     preload()
     {
-         this.load.image('nws', 'src/assets/logoNws.jpg')
-        
+        this.load.image('background', 'src/assets/seineInno.jpg')
+         this.load.image('nws', 'src/assets/logo_nws.png')
+         this.load.image('market', 'src/assets/logo-marketing.png')
+         this.load.image('design', 'src/assets/logo-design.png')
+         this.load.image('dev', 'src/assets/logo-dev.png')
     }
 
     create()
     {
-            this.add.image(230,240, 'nws')
+
+            this.add.image(320,250, 'nws')
+            .setScale(0.2)
+            this.add.image(100,200, 'market')
+            .setScale(0.7)
+            this.add.image(340,200, 'design')
+            .setScale(0.7)
+            this.add.image(220,360, 'dev')
             .setScale(0.7)
 
             this.palyer={
