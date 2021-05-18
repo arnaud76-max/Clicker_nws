@@ -1,9 +1,7 @@
 import Phaser from '../lib/phaser.js'
-import Dev from '../game/Dev.js'
-import Market from '../game/Market.js'
-import Design from '../game/Design.js'
 
-export default class Game extends Phaser.Scenes
+
+export default class Game extends Phaser.Scene
 {
     constructor()
     {
@@ -16,14 +14,16 @@ export default class Game extends Phaser.Scenes
 
     preload()
     {
-         this.preload.image('nws', 'assets/logo_nws.png')
+         this.load.image('nws', 'src/assets/logoNws.jpg')
         
     }
 
     create()
     {
-            this.add.image(24,24, 'nws')
-            .setScale(1.5)
+            this.add.image(230,240, 'nws')
+            .setScale(0.5)
+
+            
     }
     update()
     {
