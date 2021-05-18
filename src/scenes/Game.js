@@ -1,6 +1,8 @@
 import Phaser from '../lib/phaser.js'
 import Nws from '../game/Nws.js'
 
+
+
 export default class Game extends Phaser.Scene
 {
     constructor()
@@ -9,7 +11,8 @@ export default class Game extends Phaser.Scene
     }
     init()
     {
-
+        var text;
+        var counter = 0;
     }
 
     preload()
@@ -23,30 +26,39 @@ export default class Game extends Phaser.Scene
 
     create()
     {
+                 
+                    this.add.image(240, 180, 'market')
+                    .setScale(0.7)
+                     this.add.image(350, 320, 'design')
+                     .setScale(0.7)
 
-            this.add.image(320,250, 'nws')
-            .setScale(0.2)
-            this.add.image(100,200, 'market')
-            .setScale(0.7)
-            this.add.image(340,200, 'design')
-            .setScale(0.7)
-            this.add.image(220,360, 'dev')
-            .setScale(0.7)
+                      this.add.image(70, 320, 'dev')
+                     .setScale(0.7)
 
-            this.palyer={
-                clickDmg: 1,
-                gold: 0
-            };
+                        let nws   = this.add.sprite(game.config.width / 2, game.config.height / 2, ' nws');
+                        let market = this.add.sprite(nws.x + 46, nws.y, "market");
 
-            this.nws = this.physics.add.group({
-                classType: Nws
-            })
+                    var text = this.add.text(100, 0, '', { font: '64px Courier', fill: '#00ff00' });
+                    this.data.set('score', 0);
+                    text.setText([
+                        'Score: ' + this.data.get('score')
+                    ]);
+                   this.add.image.anchor.set(0.5);
 
+                   image.inputEnabled= true;
+
+                    text = game.add.text(250, 16, '', { fill:'#ffffff'});
+
+                    image.events.onInputDown.add(listener, this);
+
+                 
             
+             
     }
     update()
     {
-
+            counter++;
+            text.text ="Vous cliquer" + counter + "time!";
     }
 
 }
