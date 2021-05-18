@@ -1,5 +1,5 @@
 import Phaser from '../lib/phaser.js'
-
+import Nws from '../game/Nws.js'
 
 export default class Game extends Phaser.Scene
 {
@@ -21,7 +21,16 @@ export default class Game extends Phaser.Scene
     create()
     {
             this.add.image(230,240, 'nws')
-            .setScale(0.5)
+            .setScale(0.7)
+
+            this.palyer={
+                clickDmg: 1,
+                gold: 0
+            };
+
+            this.nws = this.physics.add.group({
+                classType: Nws
+            })
 
             
     }
